@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUTSŪ | Premium Cleaning & Care</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- File CSS utama -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a class="logo" href="#home" aria-label="Kembali ke beranda">KUTSŪ</a>
+
+            <div class="nav-links">
+                <a class="active" href="#services">SERVICES</a>
+                <a href="#about">ABOUT</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#contact">CONTACT</a>
+                <a href="#location">LOCATION</a>
+            </div>
+
+            <div class="nav-actions">
+                <a
+                    class="btn btn-primary"
+                    href="https://wa.me/6289527097198?text=Halo%20KUTSŪ%2C%20saya%20ingin%20booking%20layanan%20cleaning."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    BOOK SERVICE
+                </a>
+            </div>
+
+            <!-- Tombol hamburger hanya muncul di tampilan mobile -->
+            <button
+                class="hamburger"
+                id="hamburgerBtn"
+                type="button"
+                aria-label="Buka menu navigasi"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Menu mobile dikontrol dari script.js -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a class="active" href="#services">SERVICES</a>
+            <a href="#about">ABOUT</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#contact">CONTACT</a>
+            <a href="#location">LOCATION</a>
+            <a
+                class="btn btn-primary"
+                href="https://wa.me/6289527097198?text=Halo%20KUTSŪ%2C%20saya%20ingin%20booking%20layanan%20cleaning."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                BOOK SERVICE
+            </a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO / HOME ================= -->
+    <header class="container hero" id="home">
+        <div class="hero-content">
+            <h1 class="display-title">Fresh Looks, Clean Goods.</h1>
+            <p>Layanan cleaning &amp; treatment premium untuk sepatu, tas, helm, dan aksesoris kesayangan Anda.</p>
+
+            <div class="hero-actions">
+                <a
+                    class="btn btn-primary"
+                    href="https://wa.me/6289527097198?text=Halo%20KUTSŪ%2C%20saya%20ingin%20booking%20layanan%20cleaning."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book Now
+                </a>
+                <a class="btn btn-outline" href="#services">View Services</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="Gambar/G4.png" alt="Beranda KUTSŪ - Layanan Cleaning & Treatment">
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= SERVICES ================= -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label-caps">TREATMENT MENU</span>
+                    <h2 class="section-title">Katalog Layanan &amp; Harga</h2>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="token-image-bg">
+                            <span class="material-symbols-outlined">ice_skating</span>
+                        </div>
+                        <h3>Shoes Cleaning</h3>
+                        <p>Pembersihan mendalam untuk segala jenis material sepatu dari kanvas hingga suede premium.</p>
+                        <div class="service-price">
+                            <span class="label-caps">START FROM</span>
+                            <span class="price-amount">Rp 30.000</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="token-image-bg">
+                            <span class="material-symbols-outlined">shopping_bag</span>
+                        </div>
+                        <h3>Bag Cleaning</h3>
+                        <p>Perawatan khusus tas branded dan harian untuk menjaga struktur dan kebersihan material.</p>
+                        <div class="service-price">
+                            <span class="label-caps">START FROM</span>
+                            <span class="price-amount">Rp 35.000</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="token-image-bg">
+                            <span class="material-symbols-outlined">sports_motorsports</span>
+                        </div>
+                        <h3>Helmet Treatment</h3>
+                        <p>Sanitasi interior dan poles eksterior helm untuk kenyamanan dan keamanan berkendara.</p>
+                        <div class="service-price">
+                            <span class="label-caps">START FROM</span>
+                            <span class="price-amount">Rp 30.000</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="token-image-bg">
+                            <span class="material-symbols-outlined">checkroom</span>
+                        </div>
+                        <h3>Hat Cleaning</h3>
+                        <p>Menghilangkan noda keringat dan debu pada topi kesayangan Anda tanpa merusak bentuk.</p>
+                        <div class="service-price">
+                            <span class="label-caps">START FROM</span>
+                            <span class="price-amount">Rp 20.000</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="token-image-bg">
+                            <span class="material-symbols-outlined">cleaning_services</span>
+                        </div>
+                        <h3>Deep Treatment</h3>
+                        <p>Pembersihan intensif hingga ke sela-sela terdalam untuk barang yang sangat kotor.</p>
+                        <div class="service-price">
+                            <span class="label-caps">START FROM</span>
+                            <span class="price-amount">Rp 75.000</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="token-image-bg">
+                            <span class="material-symbols-outlined">format_paint</span>
+                        </div>
+                        <h3>Repaint &amp; Care</h3>
+                        <p>Restorasi warna yang pudar agar barang Anda terlihat seperti baru kembali.</p>
+                        <div class="service-price">
+                            <span class="label-caps">START FROM</span>
+                            <span class="price-amount">Rp 50.000</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section class="about-section" id="about">
+            <div class="container about-grid">
+                <div class="about-img-wrapper">
+                    <img src="Gambar/G5.png" alt="Tentang KUTSŪ">
+                </div>
+
+                <div class="about-content">
+                    <span class="label-caps">ESTABLISHED 2024</span>
+                    <h2 class="section-title">Preserving Your Investments Through Expert Care.</h2>
+                    <p>
+                        KUTSŪ lahir dari apresiasi mendalam terhadap fashion dan lifestyle gear. Kami memahami bahwa
+                        setiap sepatu, tas, dan helm adalah investasi yang mencerminkan jati diri Anda. Fokus kami bukan
+                        sekadar membersihkan, melainkan menjaga umur panjang, higienitas, dan kesegaran setiap item
+                        melalui teknik treatment yang presisi dan bahan premium.
+                    </p>
+                    <p class="accent">
+                        Kami menggabungkan metode tradisional yang teliti dengan teknologi modern untuk memberikan hasil
+                        akhir yang sempurna, selayaknya unboxing produk baru.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= WHY KUTSŪ ================= -->
+        <section class="why-section">
+            <div class="container">
+                <h2 class="section-title">Why KUTSŪ?</h2>
+
+                <div class="why-grid">
+                    <div class="why-item">
+                        <div class="why-icon-box"><span class="material-symbols-outlined">bolt</span></div>
+                        <p class="label-caps">Fast Process</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon-box"><span class="material-symbols-outlined">workspace_premium</span></div>
+                        <p class="label-caps">Premium Treatment</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon-box"><span class="material-symbols-outlined">sanitizer</span></div>
+                        <p class="label-caps">Hygienic Cleaning</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon-box"><span class="material-symbols-outlined">sell</span></div>
+                        <p class="label-caps">Affordable Price</p>
+                    </div>
+                    <div class="why-item col-span-mobile">
+                        <div class="why-icon-box"><span class="material-symbols-outlined">verified_user</span></div>
+                        <p class="label-caps">Trusted Service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY ================= -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="gallery-header">
+                    <div>
+                        <span class="label-caps">RESULTS</span>
+                        <h2 class="section-title">Before &amp; After Gallery</h2>
+                    </div>
+                    <a class="gallery-link" href="#gallery">VIEW ALL WORK</a>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item md-col-span-2 md-row-span-2">
+                        <img src="Gambar/Bp.png" alt="Perbandingan hasil treatment sebelum dan sesudah">
+                    </div>
+                    <div class="gallery-item aspect-square">
+                        <img src="Gambar/Crocs.png" alt="Hasil treatment alas kaki Crocs">
+                    </div>
+                    <div class="gallery-item aspect-square">
+                        <img src="Gambar/Helm.png" alt="Hasil treatment helm">
+                    </div>
+                    <div class="gallery-item md-col-span-2 aspect-video">
+                        <img src="Gambar/G2.png" alt="Hasil perawatan tas premium">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TESTIMONIALS ================= -->
+        <section class="testimonial-section" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label-caps">WHAT THEY SAY</span>
+                    <h2 class="section-title">Komentar Pelanggan</h2>
+                </div>
+
+                <!-- Data komentar dimuat dari Firebase melalui script.js -->
+                <div class="testimonial-grid" id="testimonialList"></div>
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section class="cta-section">
+            <div class="cta-wrapper">
+                <h2 class="section-title">Make Your Goods Look Fresh Again.</h2>
+                <a
+                    class="btn"
+                    href="https://wa.me/6289527097198?text=Halo%20KUTSŪ%2C%20saya%20ingin%20booking%20layanan%20cleaning."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    BOOK NOW VIA WHATSAPP
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT / WHATSAPP ================= -->
+        <section class="contact-section" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <div>
+                        <span class="label-caps">GET IN TOUCH</span>
+                        <h2 class="section-title">Pesan Layanan via WhatsApp</h2>
+                        <p>
+                            Untuk melakukan pemesanan layanan KUTSŪ, pelanggan dapat langsung menghubungi kami melalui
+                            WhatsApp. Tim kami akan membantu proses pemesanan, konfirmasi layanan, serta estimasi biaya treatment.
+                        </p>
+                    </div>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="material-symbols-outlined">location_on</span>
+                            <p>Jl. R. H. Fisabililah Sebelah Tema Coffee - TPI</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-symbols-outlined">phone</span>
+                            <p>+62 895-2709-7198</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-symbols-outlined">mail</span>
+                            <p>kutsupremiumcare@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="social-row">
+                        <a
+                            class="social-btn"
+                            href="https://wa.me/6289527097198"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="WhatsApp KUTSŪ"
+                        >
+                            <span class="material-symbols-outlined">chat</span>
+                        </a>
+                        <a class="social-btn" href="mailto:kutsupremiumcare@gmail.com" aria-label="Email KUTSŪ">
+                            <span class="material-symbols-outlined">mail</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="whatsapp-card">
+                    <span class="material-symbols-outlined whatsapp-icon">chat</span>
+                    <h3>Booking Sekarang</h3>
+                    <p>
+                        Klik tombol di bawah untuk langsung melakukan pemesanan melalui WhatsApp. Sertakan jenis layanan,
+                        jumlah barang, dan foto barang jika diperlukan.
+                    </p>
+
+                    <a
+                        class="btn btn-primary whatsapp-btn"
+                        href="https://wa.me/6289527097198?text=Halo%20KUTSŪ%2C%20saya%20ingin%20booking%20layanan%20cleaning."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        PESAN VIA WHATSAPP
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CHECK STATUS ================= -->
+        <section class="status-section" id="check-status">
+            <div class="container">
+                <h2 class="section-title">Cek Status Pesanan</h2>
+                <p>Masukkan kode unik Anda untuk melihat perkembangan treatment barang Anda.</p>
+
+                <div class="status-input-group">
+                    <input
+                        class="form-control"
+                        id="statusInputCode"
+                        type="text"
+                        placeholder="Masukkan Kode Unik (e.g. KTS-12345)"
+                    >
+                    <button class="btn btn-primary" type="button" onclick="checkOrderStatus()">CEK STATUS</button>
+                </div>
+
+                <!-- Hasil cek status dari Firebase muncul di sini -->
+                <div class="status-result" id="statusResult"></div>
+            </div>
+        </section>
+
+        <!-- ================= LOCATION / MAPS ================= -->
+        <section class="location-section" id="location">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label-caps">OUR LOCATION</span>
+                    <h2 class="section-title">Lokasi KUTSŪ</h2>
+                </div>
+
+                <div class="location-grid">
+                    <div class="location-info">
+                        <h3>Kunjungi Workshop Kami</h3>
+                        <p>
+                            Datang langsung ke lokasi KUTSŪ untuk konsultasi layanan cleaning, treatment, dan perawatan
+                            barang kesayangan Anda.
+                        </p>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <p>Jl. R. H. Fisabililah Sebelah Tema Coffee - TPI</p>
+                            </div>
+                            <div class="info-item">
+                                <span class="material-symbols-outlined">schedule</span>
+                                <p>Open Everyday 08.00 - 09.00 PM</p>
+                            </div>
+                            <div class="info-item">
+                                <span class="material-symbols-outlined">phone</span>
+                                <p>+62 895-2709-7198</p>
+                            </div>
+                        </div>
+
+                        <a
+                            class="btn btn-primary"
+                            href="https://www.google.com/maps/search/?api=1&query=Jl.%20R.%20H.%20Fisabililah%20Sebelah%20Tema%20Coffee%20TPI"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            BUKA DI GOOGLE MAPS
+                        </a>
+                    </div>
+
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d257.7740307841766!2d104.47943861344342!3d0.8972763408951585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1781424559449!5m2!1sid!2sid"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-wrapper">
+            <a href="#home" class="logo">KUTSŪ</a>
+
+            <div class="footer-links">
+                <a href="#home">HOME</a>
+                <a href="#services">SERVICES</a>
+                <a href="#about">ABOUT</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#testimonials">TESTIMONIALS</a>
+                <a href="#contact">CONTACT</a>
+                <a href="#location">LOCATION</a>
+                <a
+                    href="https://wa.me/6289527097198?text=Halo%20KUTSŪ%2C%20saya%20ingin%20booking%20layanan%20cleaning."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WHATSAPP
+                </a>
+                <a href="mailto:kutsupremiumcare@gmail.com">EMAIL</a>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Jl.%20R.%20H.%20Fisabililah%20Sebelah%20Tema%20Coffee%20TPI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    MAPS
+                </a>
+            </div>
+
+            <div class="copyright">
+                © 2025 KUTSŪ CLEAN &amp; TREATMENT. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <!-- File JavaScript utama: type="module" wajib karena memakai Firebase import -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
