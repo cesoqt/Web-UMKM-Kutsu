@@ -55,15 +55,18 @@ function setupMobileMenu() {
         const isOpen = mobileMenu.classList.toggle("show");
 
         hamburgerBtn.classList.toggle("active", isOpen);
+        document.body.classList.toggle("menu-open", isOpen);
+
         hamburgerBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
         hamburgerBtn.setAttribute("aria-label", isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
     });
 
-    // Menu otomatis tertutup setelah link diklik
     mobileMenuItems.forEach((item) => {
         item.addEventListener("click", () => {
             mobileMenu.classList.remove("show");
             hamburgerBtn.classList.remove("active");
+            document.body.classList.remove("menu-open");
+
             hamburgerBtn.setAttribute("aria-expanded", "false");
             hamburgerBtn.setAttribute("aria-label", "Buka menu navigasi");
         });
@@ -136,7 +139,7 @@ async function loadTestimonials() {
 
 // =====================================================
 // FITUR 3: MENENTUKAN POSISI TIMELINE BERDASARKAN STATUS
-// Status Firebase yang disarankan:
+// Status Firebase:
 // Waiting, On Progress, Drying, Done
 // =====================================================
 function getOrderStep(status) {
@@ -308,6 +311,69 @@ function setupStatusEnterKey() {
     });
 }
 
+// =====================================================
+// FITUR: ACTIVE NAVBAR BERDASARKAN POSISI SCROLL
+// Garis bawah navbar akan pindah sesuai section aktif
+// =====================================================
+function setupActiveNavbar() {
+    const navLinks = document.querySelectorAll(
+        ".nav-links a[href^='#'], .mobile-menu a[href^='#']:not(.btn)"
+    );
+
+    const sectionIds = Array.from(navLinks)
+        .map((link) => link.getAttribute("href"))
+        .filter((href) => href && href !== "#")
+        .map((href) => href.replace("#", ""));
+
+    const sections = sectionIds
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+    if (!navLinks.length || !sections.length) return;
+
+    function setActiveLink(activeId) {
+        navLinks.forEach((link) => {
+            const linkTarget = link.getAttribute("href");
+
+            if (linkTarget === `#${activeId}`) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
+
+    function updateActiveNavbar() {
+        const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 0;
+        const scrollPosition = window.scrollY + navbarHeight + 120;
+
+        let currentSectionId = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+                scrollPosition >= sectionTop &&
+                scrollPosition < sectionTop + sectionHeight
+            ) {
+                currentSectionId = section.id;
+            }
+        });
+
+        if (currentSectionId) {
+            setActiveLink(currentSectionId);
+        } else {
+            navLinks.forEach((link) => link.classList.remove("active"));
+        }
+    }
+
+    window.addEventListener("scroll", updateActiveNavbar);
+    window.addEventListener("load", updateActiveNavbar);
+
+    updateActiveNavbar();
+}
+
 
 // =====================================================
 // MENJALANKAN SEMUA FITUR SETELAH HTML SIAP
@@ -315,6 +381,7 @@ function setupStatusEnterKey() {
 document.addEventListener("DOMContentLoaded", () => {
     setupMobileMenu();
     setupStatusEnterKey();
+    setupActiveNavbar();
     loadTestimonials();
 });
 

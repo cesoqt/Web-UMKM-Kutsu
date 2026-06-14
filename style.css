@@ -25,6 +25,7 @@
     --xl: 80px;
     --gutter: 24px;
     --container-max: 1280px;
+    --navbar-height: 62px;
 
     /* Radius */
     --radius-default: 0.125rem;
@@ -184,21 +185,37 @@ textarea {
 /* ==========================================================================
    5. NAVBAR & MOBILE MENU
    ========================================================================== */
+/*
+   Catatan penting:
+   - Navbar dibuat fixed agar tetap terlihat saat halaman di-scroll.
+   - Body diberi padding-top agar hero tidak tertutup navbar.
+   - Mobile menu dibuat overlay dropdown, bukan full screen dan tidak mendorong konten.
+*/
+html {
+    scroll-padding-top: var(--navbar-height);
+}
+
+body {
+    padding-top: var(--navbar-height);
+}
+
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 50;
-    background: rgba(249, 249, 249, 0.8);
+    left: 0;
+    right: 0;
+    z-index: 999;
+    width: 100%;
+    background: rgba(249, 249, 249, 0.92);
     border-bottom: 1px solid var(--outline-variant);
     backdrop-filter: blur(10px);
 }
 
 .nav-wrapper {
+    min-height: var(--navbar-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: var(--base);
-    padding-bottom: var(--base);
 }
 
 .logo {
@@ -228,7 +245,7 @@ textarea {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
-    transition: color 0.2s;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -240,9 +257,10 @@ textarea {
     border-bottom: 2px solid var(--primary);
 }
 
+/* Tombol hamburger untuk mobile */
 .hamburger {
     position: relative;
-    z-index: 100;
+    z-index: 1001;
     width: 44px;
     height: 44px;
     display: inline-flex;
@@ -253,7 +271,7 @@ textarea {
     background: transparent;
     border: 1px solid var(--outline-variant);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .hamburger:hover {
@@ -280,20 +298,36 @@ textarea {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Mobile menu overlay dropdown */
 .mobile-menu {
-    position: relative;
-    z-index: 99;
-    display: none;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    z-index: 998;
+    width: 100%;
+    max-height: 75vh;
+    display: flex;
     flex-direction: column;
     gap: var(--sm);
-    width: 100%;
     padding: var(--md) var(--gutter);
-    background: rgba(249, 249, 249, 0.96);
+    overflow-y: auto;
+    background: rgba(249, 249, 249, 0.98);
     border-top: 1px solid var(--outline-variant);
+    border-bottom: 1px solid var(--outline-variant);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
 .mobile-menu.show {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .mobile-menu a {
@@ -327,6 +361,7 @@ textarea {
     color: var(--primary);
 }
 
+/* Desktop navbar */
 @media (min-width: 768px) {
     .nav-links,
     .nav-actions {
@@ -335,7 +370,7 @@ textarea {
 
     .hamburger,
     .mobile-menu {
-        display: none !important;
+        display: none;
     }
 }
 
@@ -1239,3 +1274,4 @@ textarea {
         font-size: 12px;
     }
 }
+
